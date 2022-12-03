@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:jarnama/firebase_options.dart';
 
-void main() {
+/*
+Гитхабта иштөө:
+1. Проектини жаңы репазиторийге жүктөө
+2. Проектиге кошумчаларды кошуу
+3. Проектиде бранч создавайтетүү
+4. Проектти жүргүзүү, эгер проект иштеген болсо проектини кайра => git add . git commit, git push
+5.
+ */
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
